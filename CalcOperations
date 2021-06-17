@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace la5Tema
+{
+    class CalcOperations
+
+    {
+        public double firstNum;
+        public double secondNum;
+        public double result;
+
+        public double Counting()
+        {
+            result = firstNum + secondNum;
+            return result;
+        }
+        public double Subtraction()
+        {
+            result = firstNum - secondNum;
+            return result;
+        }
+        public double Multiplication()
+        {
+            result = firstNum * secondNum;
+            return result;
+        }
+        public double Division()
+        {
+            result = firstNum / secondNum;
+            return result;
+        }
+
+    }
+}
+
+
+
+
+
+using System;
+
+namespace la5Tema
+{
+    class Program
+    {
+       
+            static void Main(string[] args)
+            {
+                CalcOperations calcOperations = new CalcOperations();
+                
+                GetUserInput1(calcOperations);
+
+
+            Console.Write("Semnul este: ");
+            string op = Console.ReadLine();
+
+            GetUserInput2(calcOperations);
+
+            if (op == "+")
+            {
+                Console.WriteLine(calcOperations.Counting());
+            }
+            else if (op == "-")
+            {
+                Console.WriteLine(calcOperations.Subtraction());
+            }
+            else if (op == "/")
+            {
+                Console.WriteLine(calcOperations.Division());
+            }
+            else if (op == "*")
+            {
+                Console.WriteLine(calcOperations.Multiplication());
+            }
+            else
+            {
+                Console.WriteLine("Invalid Operator");
+            }
+
+                Console.ReadKey();
+            }
+            static void GetUserInput1(CalcOperations calcOperations)
+            {
+                Console.WriteLine("Primul numar: ");
+                calcOperations.firstNum = double.Parse(Console.ReadLine());
+               
+            }
+
+       
+
+        static void GetUserInput2(CalcOperations calcOperations)
+        {
+            Console.WriteLine("Al doilea numar: ");
+            calcOperations.secondNum = double.Parse(Console.ReadLine());
+        }
+        }
+    }
